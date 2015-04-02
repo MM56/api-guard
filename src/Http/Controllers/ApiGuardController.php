@@ -16,7 +16,7 @@ use Route;
 
 class ApiGuardController extends Controller
 {
-//test
+
     /**
      * @var array
      */
@@ -46,7 +46,7 @@ class ApiGuardController extends Controller
 
             $this->manager->parseIncludes(Input::get(Config::get('apiguard.includeKeyword', 'include'), 'include'));
 
-            $this->response = new Response($this->manager);
+            $this->response = $this->getResponseInstance($this->manager);
 
             // apiguard might not be the only before filter on the controller
             // loop through any before filters and pull out $apiMethods in the controller
@@ -200,6 +200,10 @@ class ApiGuardController extends Controller
             }
 
         }, ['apiMethods' => $this->apiMethods]);
+    }
+
+    protected function getResponseInstance($manager) {
+        return new Response($manager);
     }
 
 }
