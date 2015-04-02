@@ -16,7 +16,7 @@ use Route;
 
 class ApiGuardController extends Controller
 {
-
+//test
     /**
      * @var array
      */
