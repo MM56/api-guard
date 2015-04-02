@@ -27,7 +27,7 @@
             "database"
         ],
         "psr-4": {
-            "": "src"
+            "Chrisbjr\\ApiGuard\\": "src"
         }
     },
     "minimum-stability": "stable"
